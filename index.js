@@ -1,13 +1,21 @@
-function Superhero (name, secretIdentity, powers, weakness) {
-    this.name = name,
-    this.secretIdentity = secretIdentity,
-    this.powers = powers,
-    this.weakness = weakness,
-    
-    usePower (){
-        console.log(`${this.name} uses ${this.powers}`)
+const superhero = {
+  name: "Spider-Man",
+  secretIdentity: "Peter Parker",
+  powers: ["wall-crawling", "super strength", "spider-sense"],
+  weakness: "Ethyl Chloride Pesticide",
+  usePower: function (powerName) {
+    if (this.powers.includes(powerName)) {
+      console.log(`${this.name} is using ${powerName}!`);
+    } else {
+      console.log(`${this.name} doesn't have the power: ${powerName}`);
     }
-    revealIdentity() {
-        console.log(`${this.name} is ${this.secretIdentity}`)
-    }
-}
+  },
+  revealIdentity: function () {
+    console.log(
+      `The secret identity of ${this.name} is ${this.secretIdentity}`
+    );
+  },
+};
+
+superhero.usePower("super strength");
+superhero.revealIdentity();
